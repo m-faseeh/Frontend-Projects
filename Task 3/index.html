@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+    <style>
+        body{
+            background-color: #3b3838;
+            padding: 50px;
+            color: rgb(247, 254, 254);
+        }
+        h1{
+            color: rgb(120, 192, 255);
+            text-align: center;
+        }
+        #user-input > input{
+            margin:5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Practice Exercise</h1>
+    <p>Discount for Cofee shop</p>
+    <div id="user-input">
+        <label for="age"> Please enter the age:</label><br>
+        <input id="age" type="text"/>
+        <button onclick="submitAge()" type="submit"> Submit</button>
+        <p id="result"></p>
+    </div>
+    <div>
+        <ul>
+            <li>if age is between 18 and 25. he will get 5% student discount.</li>
+            <li>if age is 65 or greater then he will get 10% special discount.</li>
+     
+        </ul>
+    </div>
+    <script>
+        function submitAge(){
+            let age=document.getElementById('age').value;
+            console.log(age);
+
+            let discount=0;
+            let msg="";
+            if(age>=65){
+                discount=10;
+                msg="Elders";
+            }else if(age>= 18 && age<=25){
+                discount=5;
+                msg="Students";
+            } else{
+                discount=0;
+            }
+            document.getElementById("result").innerHTML= `You got ${discount} % discount for ${msg} at the age ${age}.`;
+        } 
+    </script>
+</body>
+
+</html>
